@@ -1,0 +1,12 @@
+name: Automatización de Script
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v3
+      - name: Dar permisos
+        run: chmod +x deploy.sh
+      - name: Ejecutar script
+        run: ./deploy.sh
